@@ -1,0 +1,33 @@
+{
+    "name": "rails",
+	"chef_type": "role",
+	"json_class":"Chef::Role",
+    "default_attributes": {
+        "site_base": {
+            "user" : "vagrant"
+        },
+        "ruby_build": {
+            "upgrade": "sync"
+        },
+        "rbenv": {
+            "user_installs": [{
+                "user": "vagrant",
+                "rubies": ["2.1.2"],
+                "global": "2.1.2",
+                "gems": {
+                    "2.1.2": [
+                        {"name": "bundler"}
+                    ]
+                }
+            }]
+        }
+    },
+    "run_list": [
+		"vim",
+        "ruby_build",
+        "rbenv::user",
+        "mongodb::10gen_repo",
+        "mongodb",
+        "nginx"
+    ]
+}

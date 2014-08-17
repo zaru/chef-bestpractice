@@ -1,8 +1,5 @@
 {
-  "run_list": [
-
-  ],
-  "automatic": {
-    "ipaddress": "centos"
-  }
+    "run_list":[
+        "role[development-server]"
+    ]
 }
