@@ -1,9 +1,10 @@
 # 僕が考えた最強のレシピ運用ベストプラクティス
 
-## vagrant box追加
+## vagrant box追加と起動
 
 `
 $ vagrant box add centos65 https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box
+$ vagrant up
 `
 
 ## bundle install
