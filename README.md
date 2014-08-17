@@ -13,6 +13,13 @@ $ vagrant up
 $ vagrant ssh-config --host centos65 >> ~/.ssh/config
 `
 
+### 仮想環境にopensslを追加 ...これもレシピ化する予定です
+
+`
+$ vagrant ssh
+$ sudo yum install openssl openssl-devel
+`
+
 ## bundle install
 
 `
@@ -29,8 +36,16 @@ $ rm -rf cookbooks
 $ ../vendor/bin/berks vendor cookbooks
 `
 
-## 仮想環境にchefをインストール
+## 仮想環境にレシピの内容を実行する
+
+### 仮想環境にchefをインストール
 
 `
 $ ../vendor/bin/kinfe solo prepare centos65
+`
+
+### 仮想環境にレシピの内容を実行
+
+`
+$ ../vendor/bin/kinfe solo cook centos65
 `
